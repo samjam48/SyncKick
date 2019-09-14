@@ -1,19 +1,41 @@
 {
-  "name": "synckick",
+  "name": "syncBliss",
   "version": "1.0.0",
   "description": "App to allow users to listen to audio (podcasts, books and music) in sync and be less lonely. Users can listen at the same time or catch up on things the other has listened to and stay in sync",
   "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "pg-promise": "^9.1.4",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.11.0",
+    "tape-promise": "^4.0.0",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.3.0",
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.2",
+    "supertest": "^4.0.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test tape src/tests/*.test.js | tap-spec",
+    "start": "NODE_ENV=production node src/index.js",
+    "dev": "NODE_ENV=local nodemon src/index.js",
+    "lint": "eslint *.*",
+    "db:build": "NODE_ENV=production node src/model/database/db_build.js",
+    "db:build-local": "NODE_ENV=local node src/model/database/db_build.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/samjam48/SyncKick.git"
+    "url": "git+https://github.com/samjam48/SyncBliss.git"
   },
-  "author": "Sam Harris (https://samwebsterharris.com)",
+  "author": "Sam Harris (https://SamWebsterHarris.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/samjam48/SyncKick/issues"
+    "url": "https://github.com/samjam48/SyncBliss/issues"
   },
-  "homepage": "https://github.com/samjam48/SyncKick#readme"
+  "homepage": "https://github.com/samjam48/SyncBliss#readme"
 }
