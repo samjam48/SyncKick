@@ -1,0 +1,43 @@
+:root {
+  --darkblue: #184353;
+  --lightblue: #80a4b2;
+  --orangered: #ed554b;
+  --white: #ffffff;
+  --grey: #e0e0e0;
+  --yellow: #edd596;
+  --purple: #1e1732;
+}
+
+body {
+  font-family: "Dosis", sans-serif;
+}
+
+body > section.nav-bar > div.nav-bar-content > svg:nth-child(2) {
+  margin-top: 1vh;
+}
+
+.nav-bar-content {
+  display: flex;
+  background: var(--lightblue);
+  font-family: "Dosis", sans-serif;
+  font-weight: 700;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.me-text {
+  font-size: 27px;
+  margin: 0;
+}
+
+.plantbase-text {
+  margin: 0;
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 50vw solid transparent;
+  border-right: 50vw solid transparent;
+  border-top: 8vw solid var(--lightblue);
+}
