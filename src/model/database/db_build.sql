@@ -1,36 +1,39 @@
 BEGIN;
 
-DROP TABLE IF EXISTS cravings, products, ratings CASCADE;
+DROP TABLE IF EXISTS users, content, match_content CASCADE;
 
-CREATE TABLE cravings (
+CREATE TABLE users (
     id                  SERIAL          PRIMARY KEY,
-    craving_name        VARCHAR(100)    NOT NULL
+    user_name           VARCHAR(100)    NOT NULL,
+    user_image          VARCHAR,
+    following           text            ARRAY
 );
 
-CREATE TABLE products (
+CREATE TABLE content (
     id                  SERIAL          PRIMARY KEY,
-    product_name        VARCHAR(100)    NOT NULL,
-    product_description VARCHAR(500)    NOT NULL,
-    craving_id          INTEGER         NOT NULL,
-    where_to_buy        text            ARRAY,
-    product_image       VARCHAR(200),
-    product_price       MONEY
+    title               VARCHAR(100)    NOT NULL,
+    content_description VARCHAR(500)    NOT NULL,
+    content_image       VARCHAR,
+    time_length         FLOAT,
+    content_creator     VARCHAR
 );
 
-CREATE TABLE ratings (
+CREATE TABLE match_content (
     id                  SERIAL          PRIMARY KEY,
-    product_id          INTEGER         NOT NULL,
-    rating              INTEGER         NOT NULL,
-    comment             VARCHAR(500),
-    tags                VARCHAR(200),
-    votes               INTEGER
+    user_id             INTEGER         FOREIGN KEY (users),
+    content_id          INTEGER         FOREIGN KEY (content),
+    point_of_time       FLOAT,
+    start_time          FLOAT,
+    currently_listening BOOLEAN,
+    rating              INTEGER
 );
 
-INSERT INTO cravings (craving_name) VALUES
-('Cheese'),
-('Meat'),
-('Milk'),
-('Sweets');
+INSERT INTO users (user_name, user_image, following) VALUES
+('David', 'http://www.ninjaonlinedating.com/blog/wp-content/uploads/2018/03/GoodProfilePhoto-compressed-1.jpg', '{2}'),
+('Mr Bean', 'https://dp.profilepics.in/profile_pictures/good/good_profile_pics_01.jpg', '{1}'),
+('Sam', 'https://media.licdn.com/dms/image/C5603AQGJI-F0A-VtrA/profile-displayphoto-shrink_200_200/0?e=1573689600&v=beta&t=D0ApArQBJpY0zntmvnqjF6b8wbfSCRDeRIhCys3kUa0', '{2, 4}'),
+('Sarah', 'https://media.licdn.com/dms/image/C5103AQFtjwGG9UcovQ/profile-displayphoto-shrink_200_200/0?e=1573689600&v=beta&t=ZNk3-2MEh48xLQiyxotjqZbplgazR3gBKVaS3lWi-18', '{3}'),
+('Lucie', 'https://media.licdn.com/dms/image/C5603AQFl3TnJXFgy9w/profile-displayphoto-shrink_200_200/0?e=1573689600&v=beta&t=WjeqDXfSS5xixoTK_o79t17gfRp7CBFbZDDi4MVenP4', '{4, 3, 2}');
 
 INSERT INTO products (product_name, product_description, where_to_buy, product_image, craving_id, product_price) VALUES
 (
