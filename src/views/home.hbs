@@ -1,5 +1,15 @@
 <section>
     <section>
-        What are you looking for?
+        Users
+        <ul>
+            {{#each users}}
+            <li>
+                <h3>{{user_name}}</h3>
+                <image src={{user_image}} />
+                <p>Following</p>
+                {{following_list}}
+            </li>
+            {{/each}}
+        </ul>
     </section>
 </section>

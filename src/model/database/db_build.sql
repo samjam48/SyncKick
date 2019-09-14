@@ -6,7 +6,7 @@ CREATE TABLE users (
     id                  SERIAL          PRIMARY KEY,
     user_name           VARCHAR(100)    NOT NULL,
     user_image          VARCHAR,
-    following_list           text            ARRAY
+    following_list      text            ARRAY
 );
 
 CREATE TABLE content (
@@ -15,16 +15,16 @@ CREATE TABLE content (
     content_description VARCHAR(500),
     content_url         VARCHAR    NOT NULL,
     content_image       VARCHAR,
-    time_length         FLOAT,
+    time_length         VARCHAR,
     content_creator     VARCHAR
 );
 
 CREATE TABLE match_content (
     id                  SERIAL          PRIMARY KEY,
-    user_id             INTEGER         FOREIGN KEY (users),
-    content_id          INTEGER         FOREIGN KEY (content),
-    point_of_time       FLOAT,
-    start_time          INTEGER,
+    user_id             INTEGER         NOT NULL,
+    content_id          INTEGER         NOT NULL,
+    point_of_time       VARCHAR,
+    start_time          VARCHAR,
     currently_listening BOOLEAN,
     rating              INTEGER
 );
@@ -41,7 +41,7 @@ INSERT INTO content (title, content_description, content_url, content_image, tim
 ('66: Sam Harris - The Lost Art of Listening to Yourself','Creating high quality relationships is hugely important for our mental health and well-being. With the rise of the connected world we are sacrificing the quality of our relationships for quantity. We are connected with more and more people who we are spending less and less time with. We step back from the problem and come up with some out of the box solutions.','https://anchor.fm/s/55a9394/podcast/rss','https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1568189143375-992215fe34b24.jpg','00:19:48','Sam Harris');
 
 INSERT INTO match_content (user_id, content_id, point_of_time, start_time, currently_listening, rating) VALUES
-(1, 1, '00:19:48', 1568478582890, FALSE, 3),
-(2, 2, '00:19:21', 1568478768026, TRUE, 5)
+(1, 1, '00:19:48', '1568478582890', FALSE, 3),
+(2, 2, '00:19:21', '1568478768026', TRUE, 5);
 
 COMMIT;

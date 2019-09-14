@@ -1,5 +1,5 @@
-const { getCravings } = require("../model/queries");
+const { getUsers } = require("../model/queries");
 
 exports.get = (req, res) => {
-  res.render("home");
+  getUsers().then(users => res.render("home", { users }));
 };
