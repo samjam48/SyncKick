@@ -4,6 +4,7 @@ const path = require("path");
 
 const bodyParser = require("body-parser");
 const controllers = require("./controllers");
+const helpers = require("./views/helpers/");
 
 const app = express();
 
@@ -19,7 +20,8 @@ app.engine(
     extname: "hbs",
     layoutsDir: path.join(__dirname, "views", "layouts"),
     partialsDir: path.join(__dirname, "views", "partials"),
-    defaultLayout: "main"
+    defaultLayout: "main",
+    helpers: helpers
   })
 );
 

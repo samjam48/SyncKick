@@ -6,7 +6,7 @@ CREATE TABLE users (
     id                  SERIAL          PRIMARY KEY,
     user_name           VARCHAR(100)    NOT NULL,
     user_image          VARCHAR,
-    following_list      text            ARRAY
+    following_list      int[]
 );
 
 CREATE TABLE content (
@@ -30,11 +30,10 @@ CREATE TABLE match_content (
 );
 
 INSERT INTO users (user_name, user_image, following_list) VALUES
-('David', 'http://www.ninjaonlinedating.com/blog/wp-content/uploads/2018/03/GoodProfilePhoto-compressed-1.jpg', '{2}'),
-('Mr Bean', 'https://dp.profilepics.in/profile_pictures/good/good_profile_pics_01.jpg', '{1}'),
 ('Sam', 'https://media.licdn.com/dms/image/C5603AQGJI-F0A-VtrA/profile-displayphoto-shrink_200_200/0?e=1573689600&v=beta&t=D0ApArQBJpY0zntmvnqjF6b8wbfSCRDeRIhCys3kUa0', '{2, 4}'),
 ('Sarah', 'https://media.licdn.com/dms/image/C5103AQFtjwGG9UcovQ/profile-displayphoto-shrink_200_200/0?e=1573689600&v=beta&t=ZNk3-2MEh48xLQiyxotjqZbplgazR3gBKVaS3lWi-18', '{3}'),
-('Lucie', 'https://media.licdn.com/dms/image/C5603AQFl3TnJXFgy9w/profile-displayphoto-shrink_200_200/0?e=1573689600&v=beta&t=WjeqDXfSS5xixoTK_o79t17gfRp7CBFbZDDi4MVenP4', '{4, 3, 2}');
+('Lucie', 'https://media.licdn.com/dms/image/C5603AQFl3TnJXFgy9w/profile-displayphoto-shrink_200_200/0?e=1573689600&v=beta&t=WjeqDXfSS5xixoTK_o79t17gfRp7CBFbZDDi4MVenP4', '{4, 1, 2}'),
+('Mrs Bean', 'https://dp.profilepics.in/profile_pictures/good/good_profile_pics_01.jpg', '{1}');
 
 INSERT INTO content (title, content_description, content_url, content_image, time_length, content_creator) VALUES
 ('66: Sam Harris - The Lost Art of Listening to Yourself', 'Sam explains the lost art of listening to ourselves and the damage it is causing us. In our modern on demand economy we rush from one thing to the next. We optimise all our moments for learning and listening to things in between. With all of this going on we have lost the art of actually being unplugged and just listening to our mind. We constantly feel a need to distract it.','https://anchor.fm/growth-mindset-podcast/episodes/66-Sam-Harris---The-Lost-Art-of-Listening-to-Yourself-e4tukt', 'https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1565531007591-fc871923c6237.jpg', '00:19:21', 'Sam Harris' ),
