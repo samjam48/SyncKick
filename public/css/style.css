@@ -10,23 +10,52 @@
 
 body {
   font-family: "Dosis", sans-serif;
+  margin-left: 5px;
 }
 
 body > section.nav-bar > div.nav-bar-content > svg:nth-child(2) {
   margin-top: 1vh;
 }
 
-img {
+h2 {
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.user-card {
+  background-color: #08aa9c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px grey;
+}
+
+.user-profile {
   height: 200px;
   width: 200px;
   border-radius: 50%;
+  box-shadow: 2px 2px 2px rgb(89, 89, 89);
   /* background-size: cover; */
 }
 
 .follower-profile {
-  height: 80px;
-  width: 80px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
+}
+
+.followers-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.follower-profile {
+  padding: 2px;
 }
 
 .nav-bar-content {
@@ -43,14 +72,7 @@ img {
   margin: 0;
 }
 
-.plantbase-text {
-  margin: 0;
-}
-
-.arrow-down {
-  width: 0;
-  height: 0;
-  border-left: 50vw solid transparent;
-  border-right: 50vw solid transparent;
-  border-top: 8vw solid var(--lightblue);
+.nav-bar {
+  height: 10px;
+  background-color: black;
 }
