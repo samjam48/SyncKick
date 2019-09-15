@@ -20,7 +20,13 @@ img {
   height: 200px;
   width: 200px;
   border-radius: 50%;
-  background-size: cover;
+  /* background-size: cover; */
+}
+
+.follower-profile {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
 }
 
 .nav-bar-content {
