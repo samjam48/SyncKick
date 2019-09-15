@@ -18,12 +18,6 @@ exports.get = (req, res) => {
       });
     })
     .then(usersWithFollowers => {
-      // usersWithFollowers.map(user =>
-      //   // console.log("follower object:", obj)
-      //   user.follower_details.map(obj => console.log("follower object:", obj))
-      // );
-      // console.log("updated user with followers", usersWithFollowers);
-
       res.render("home", { usersWithFollowers });
     });
 };
