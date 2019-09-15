@@ -1,5 +1,5 @@
-const getUsers = require("./getUsers");
+const find = require("./find");
 
 module.exports = {
-  getUsers
+  find
 };

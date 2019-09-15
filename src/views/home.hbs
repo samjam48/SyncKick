@@ -2,15 +2,17 @@
     <section>
         Users
         <ul>
-            {{#each users}}
+            {{#each usersWithFollowers}}
             <li>
                 <h3>{{user_name}}</h3>
-                <image src={{user_image}} />
-                <p>Following</p>
-                {{!-- {{following_list}} --}}
+                <image class="user-profile" src={{user_image}} />
+                <h5>Following</h5>
                 <ul>
-                    {{#each following_list}}
-                    <li>{{this}}</li>
+                    {{#each follower_details}}
+                    <li>
+                        <p>{{this.follower_name}}</p>
+                        <image class="follower-profile" src={{this.follower_image}} />
+                    </li>
                     {{/each}}
                 </ul>
 
