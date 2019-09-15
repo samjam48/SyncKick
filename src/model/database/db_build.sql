@@ -6,7 +6,7 @@ CREATE TABLE users (
     id                  SERIAL          PRIMARY KEY,
     user_name           VARCHAR(100)    NOT NULL,
     user_image          VARCHAR,
-    following_list      text            ARRAY
+    following_list      int[]
 );
 
 CREATE TABLE content (
