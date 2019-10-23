@@ -21,10 +21,25 @@ ul {
   list-style-type: none;
 }
 
+button {
+  all: unset;
+  border: none;
+  background: none;
+  padding: 1rem;
+  border-radius: 10px;
+  color: var(--white);
+  font-weight: 700;
+  background-color: var(--lightblue);
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
 /* --------------------- Nav Bar ------------------------- */
 
 .nav-logo {
-  text-decoration: none;
   font-size: 2rem;
   color: var(--white);
 }
@@ -40,6 +55,10 @@ ul {
 }
 
 /* --------------------- Home ------------------------- */
+
+.home-page {
+  text-align: center;
+}
 
 /* --------------------- Users ------------------------- */
 
