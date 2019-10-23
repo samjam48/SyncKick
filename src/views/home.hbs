@@ -1,21 +1,14 @@
 <section>
-    <h2>Users (the TEAM)</h2>
+
+
+    <h2>Users content</h2>
     <ul>
-        {{#each usersWithFollowers}}
+        {{#each userContent}}
         <li class="user-card">
-            <h3>{{user_name}}</h3>
-            <image class="user-profile" src={{user_image}} />
-            <h5>Following</h5>
-
-            <div class="followers-section">
-                {{#each follower_details}}
-                <div class="follower">
-                    {{!-- <p>{{this.follower_name}}</p> --}}
-                    <image class="follower-profile" src={{this.follower_image}} />
-                </div>
-                {{/each}}
-            </div>
-
+            <audio controls>
+                <source src="./assets/{{title}}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
         </li>
         {{/each}}
     </ul>
