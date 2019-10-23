@@ -2,6 +2,7 @@
   --darkblue: #184353;
   --lightblue: #80a4b2;
   --orangered: #ed554b;
+  --green: #08aa9c;
   --white: #ffffff;
   --grey: #e0e0e0;
   --yellow: #edd596;
@@ -10,7 +11,7 @@
 
 body {
   font-family: "Dosis", sans-serif;
-  margin-left: 5px;
+  text-align: center;
 }
 
 h2 {
@@ -37,6 +38,12 @@ a {
   text-decoration: none;
 }
 
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* --------------------- Nav Bar ------------------------- */
 
 .nav-logo {
@@ -47,7 +54,6 @@ a {
 .nav-bar-content {
   display: flex;
   background: var(--orangered);
-  font-family: "Dosis", sans-serif;
   font-weight: 700;
   justify-content: space-evenly;
   align-items: center;
@@ -56,20 +62,23 @@ a {
 
 /* --------------------- Home ------------------------- */
 
-.home-page {
-  text-align: center;
-}
-
 /* --------------------- Users ------------------------- */
 
 .user-card {
-  background-color: #08aa9c;
+  background-color: var(--green);
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+  margin: 20px 0px;
   border-radius: 20px;
   box-shadow: 5px 5px 5px grey;
+  padding: 20px;
+  min-width: 30vw;
+}
+
+.user-card__text {
+  color: var(--white);
+  font-weight: 900;
 }
 
 .user-profile {
