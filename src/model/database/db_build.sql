@@ -36,11 +36,15 @@ INSERT INTO users (user_name, user_image, following_list) VALUES
 ('Mrs Bean', 'https://dp.profilepics.in/profile_pictures/good/good_profile_pics_01.jpg', '{1}');
 
 INSERT INTO content (title, content_description, content_url, content_image, time_length, content_creator) VALUES
-('66: Sam Harris - The Lost Art of Listening to Yourself', 'Sam explains the lost art of listening to ourselves and the damage it is causing us. In our modern on demand economy we rush from one thing to the next. We optimise all our moments for learning and listening to things in between. With all of this going on we have lost the art of actually being unplugged and just listening to our mind. We constantly feel a need to distract it.','https://anchor.fm/growth-mindset-podcast/episodes/66-Sam-Harris---The-Lost-Art-of-Listening-to-Yourself-e4tukt', 'https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1565531007591-fc871923c6237.jpg', '00:19:21', 'Sam Harris' ),
-('66: Sam Harris - The Lost Art of Listening to Yourself','Creating high quality relationships is hugely important for our mental health and well-being. With the rise of the connected world we are sacrificing the quality of our relationships for quantity. We are connected with more and more people who we are spending less and less time with. We step back from the problem and come up with some out of the box solutions.','https://anchor.fm/s/55a9394/podcast/rss','https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1568189143375-992215fe34b24.jpg','00:19:48','Sam Harris');
+('Heather-adams-intro.mp3', 'Heather introduction','https://anchor.fm/growth-mindset-podcast/episodes/66-Sam-Harris---The-Lost-Art-of-Listening-to-Yourself-e4tukt', 'https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1565531007591-fc871923c6237.jpg', '00:00:54', 'Sam Harris' ),
+('Scramble.mp3','right channel scramble','https://anchor.fm/s/55a9394/podcast/rss','https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1568189143375-992215fe34b24.jpg','00:00:02','Sam Harris'),
+('Time-Travel.mp3','time travel','https://anchor.fm/s/55a9394/podcast/rss','https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1568189143375-992215fe34b24.jpg','00:00:03','Sam Harris');
 
 INSERT INTO match_content (user_id, content_id, point_of_time, start_time, currently_listening, rating) VALUES
-(1, 1, '00:19:48', '1568478582890', FALSE, 3),
-(2, 2, '00:19:21', '1568478768026', TRUE, 5);
+(1, 1, '00:00:48', '1568478582890', FALSE, 3),
+(2, 1, '00:00:28', '1568478582890', FALSE, 3),
+(3, 2, '00:00:01', '1568478582890', FALSE, 3),
+(1, 2, '00:00:00', '1568478582890', FALSE, 3),
+(2, 3, '00:00:01', '1568478768026', TRUE, 5);
 
 COMMIT;
