@@ -4,15 +4,15 @@ require("dotenv").config();
 const pgp = require("pg-promise")();
 const url = require("url");
 
-let DB_URL = process.env.DATABASE_URL;
+let DB_URL = "";
 
-// if (process.env.NODE_ENV === "test") {
-//   DB_URL = process.env.TEST_DB_URL;
-// } else if (process.env.NODE_ENV === "local") {
-//   DB_URL = process.env.LOCAL_DB_URL;
-// } else if (process.env.NODE_ENV === "production") {
-//   DB_URL = process.env.PLANTBASE_DB_URL;
-// }
+if (process.env.NODE_ENV === "test") {
+  DB_URL = process.env.TEST_DB_URL;
+} else if (process.env.NODE_ENV === "local") {
+  DB_URL = process.env.LOCAL_DATABASE_URL;
+} else if (process.env.NODE_ENV === "production") {
+  DB_URL = process.env.DATABASE_URL;
+}
 
 if (!process.env) {
   throw new Error("Environment variable must be set");
