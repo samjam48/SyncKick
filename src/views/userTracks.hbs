@@ -1,14 +1,12 @@
 <section class="page">
-  <h2>Users content</h2>
-  <ul>
-    {{#each userContent}}
-    <li class="user-card">
-      <p>{{title}}</p>
-      <audio controls>
-        <source src="../../assets/{{filename}}" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-    </li>
-    {{/each}}
-  </ul>
+  <h2> Tracks</h2>
+  {{#each userContent}}
+  <div class="user-card">
+    <p class="user-card__text">{{title}}</p>
+    <audio controls>
+      <source src="../../assets/{{filename}}" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  {{/each}}
 </section>
