@@ -13,10 +13,6 @@ body {
   margin-left: 5px;
 }
 
-body > section.nav-bar > div.nav-bar-content > svg:nth-child(2) {
-  margin-top: 1vh;
-}
-
 h2 {
   padding: 10px;
 }
@@ -24,6 +20,28 @@ h2 {
 ul {
   list-style-type: none;
 }
+
+/* --------------------- Nav Bar ------------------------- */
+
+.nav-logo {
+  text-decoration: none;
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.nav-bar-content {
+  display: flex;
+  background: var(--orangered);
+  font-family: "Dosis", sans-serif;
+  font-weight: 700;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2vh;
+}
+
+/* --------------------- Home ------------------------- */
+
+/* --------------------- Users ------------------------- */
 
 .user-card {
   background-color: #08aa9c;
@@ -40,7 +58,6 @@ ul {
   width: 200px;
   border-radius: 50%;
   box-shadow: 2px 2px 2px rgb(89, 89, 89);
-  /* background-size: cover; */
 }
 
 .follower-profile {
@@ -56,23 +73,4 @@ ul {
 
 .follower-profile {
   padding: 2px;
-}
-
-.nav-bar-content {
-  display: flex;
-  background: var(--lightblue);
-  font-family: "Dosis", sans-serif;
-  font-weight: 700;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.me-text {
-  font-size: 27px;
-  margin: 0;
-}
-
-.nav-bar {
-  height: 10px;
-  background-color: black;
 }
