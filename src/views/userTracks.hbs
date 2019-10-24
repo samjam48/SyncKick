@@ -1,0 +1,14 @@
+<section class="page">
+  <h2> Tracks</h2>
+  {{#each userContent}}
+  <div class="user-card" id="card-{{id}}">
+    <p class="user-card__text">{{title}}</p>
+    <audio controls id="audio-{{id}}" ontimeupdate="console.log ( {{timeToSeconds point_of_time}}) ">
+      <source src=" ../../assets/{{filename}}#t={{point_of_time}}" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <span id="tracktime">0 / 0</span>
+  </div>
+  {{/each}}
+</section>

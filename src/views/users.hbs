@@ -1,12 +1,13 @@
-<section>
+<section class="page">
   <h2>Users (the TEAM)</h2>
-  <ul>
-    {{#each usersWithFollowers}}
-    <li class="user-card">
-      <h3>{{user_name}}</h3>
-      <image class="user-profile" src={{user_image}} />
-      <h5>Following</h5>
 
+  {{#each usersWithFollowers}}
+  <a href="/user/{{id}}" class="users-link">
+    <div class="user-card">
+      <h3 class="user-card__text">{{user_name}}</h3>
+      <image class="user-profile" src={{user_image}} />
+
+      <h5 class="user-card__text">Following</h5>
       <div class="followers-section">
         {{#each follower_details}}
         <div class="follower">
@@ -14,8 +15,8 @@
         </div>
         {{/each}}
       </div>
+    </div>
+  </a>
+  {{/each}}
 
-    </li>
-    {{/each}}
-  </ul>
 </section>

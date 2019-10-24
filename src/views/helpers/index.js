@@ -1,7 +1,5 @@
-const showFollower = require("./showFollower");
-
-// this is currently demo code. No helpers being used yet
+const timeToSeconds = require("./timeToSeconds");
 
 module.exports = {
-  showFollower
+  timeToSeconds
 };
