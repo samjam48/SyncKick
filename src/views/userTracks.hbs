@@ -1,9 +1,9 @@
 <section class="page">
   <h2> Tracks</h2>
   {{#each userContent}}
-  <div class="user-card">
+  <div class="user-card" id="card-{{id}}">
     <p class="user-card__text">{{title}}</p>
-    <audio controls>
+    <audio controls id="audio-{{id}}">
       <source src="../../assets/{{filename}}#t={{point_of_time}}" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
