@@ -3,9 +3,8 @@
   {{#each userContent}}
   <div class="user-card" id="card-{{id}}">
     <p class="user-card__text">{{title}}</p>
-    <audio controls id="audio-{{id}}"
-      ontimeupdate="document.getElementById('tracktime').innerHTML = Math.floor(this.currentTime) + ' / ' + Math.floor(this.duration);">
-      <source src="../../assets/{{filename}}#t={{point_of_time}}" type="audio/mpeg">
+    <audio controls id="audio-{{id}}" ontimeupdate="console.log ( {{timeToSeconds point_of_time}}) ">
+      <source src=" ../../assets/{{filename}}#t={{point_of_time}}" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
 

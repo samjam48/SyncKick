@@ -4,8 +4,8 @@ function pauseAudio() {
   x.pause();
 }
 
-setInterval(() => {
-  if (x.currentTime >= 30) {
-    pauseAudio();
-  }
-}, 100);
+x.addEventListener("timeupdate", () => {
+  // if (x.currentTime >= 30) {
+  //   pauseAudio();
+  // }
+});
