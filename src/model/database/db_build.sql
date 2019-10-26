@@ -21,13 +21,14 @@ CREATE TABLE content (
 );
 
 CREATE TABLE match_content (
-    id                  SERIAL          PRIMARY KEY,
-    user_id             INTEGER         NOT NULL,
-    content_id          INTEGER         NOT NULL,
-    point_of_time       VARCHAR,
-    start_time          VARCHAR,
-    currently_listening BOOLEAN,
-    rating              INTEGER
+    id                      SERIAL          PRIMARY KEY,
+    user_id                 INTEGER         NOT NULL,
+    content_id              INTEGER         NOT NULL,
+    current_time_in_track   VARCHAR,
+    time_started_utc        VARCHAR,
+    currently_listening     BOOLEAN,
+    target_time             INTEGER,
+    rating                  INTEGER
 );
 
 INSERT INTO users (user_name, user_image, following_list) VALUES
@@ -41,11 +42,11 @@ INSERT INTO content (title, filename, content_description, content_url, content_
 ('Scramble', 'Scramble.mp3','right channel scramble','https://anchor.fm/s/55a9394/podcast/rss','https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1568189143375-992215fe34b24.jpg','00:00:02','Sam Harris'),
 ('Time travel', 'Time-Travel.mp3','time travel','https://anchor.fm/s/55a9394/podcast/rss','https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1568189143375-992215fe34b24.jpg','00:00:03','Sam Harris');
 
-INSERT INTO match_content (user_id, content_id, point_of_time, start_time, currently_listening, rating) VALUES
-(1, 1, '00:00:48', '1568478582890', FALSE, 3),
-(2, 1, '00:00:28', '1568478582890', FALSE, 3),
-(3, 2, '00:00:01', '1568478582890', FALSE, 3),
-(1, 2, '00:00:00', '1568478582890', FALSE, 3),
-(2, 3, '00:00:01', '1568478768026', TRUE, 5);
+INSERT INTO match_content (user_id, content_id, current_time_in_track, time_started_utc, currently_listening, target_time, rating) VALUES
+(1, 1, '00:00:48', '1568478582890', FALSE, 50, 3),
+(2, 1, '00:00:28', '1568478582890', FALSE, 35, 3),
+(3, 2, '00:00:01', '1568478582890', FALSE, 2, 3),
+(1, 2, '00:00:00', '1568478582890', FALSE, 2, 3),
+(2, 3, '00:00:01', '1568478768026', TRUE, 2, 5);
 
 COMMIT;
