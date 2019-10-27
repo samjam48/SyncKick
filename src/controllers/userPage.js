@@ -4,23 +4,17 @@ exports.get = (req, res) => {
   const p1 = find.specificUser(req.params.id).then(([userDetails]) => {
     return userDetails.following_list;
   });
-  const p2 = find.userContent(req.params.id);
+  const p2 = find.userAndContent(req.params.id);
 
-  Promise.all([p1, p2]).then(([followingList, userContent]) => {
+  Promise.all([p1, p2]).then(([followingList, userAndContent]) => {
     find.followingListContent(followingList).then(followingContent => {
-      console.log("following content = ", followingContent[0]);
+      console.log("userAndContent = ", userAndContent);
 
       res.render("userTracks", {
         followingContent,
-        userContent
+        user: userAndContent[0][0],
+        content: userAndContent[1]
       });
     });
   });
 };
-
-//   return find.userContent(userDetails.following_list[0]);
-// });
-
-// return Promise.all(userDetails.following_list.map(userId => {
-//   return find.userContent(userId);
-// });

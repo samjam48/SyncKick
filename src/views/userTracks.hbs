@@ -1,11 +1,23 @@
 <section class="page">
+  <h2>User - {{user.user_name}}</h2>
+
   <h2> Tracks</h2>
+
+  {{#each content}}
+  <div class="user-card" id="card-{{id}}">
+    <p class="user-card__text">{{title}}</p>
+    <audio controls id="audio-{{id}}" ontimeupdate="this.currentTime >= {{target_time}} ? this.pause() : ''">
+      <source src=" ../../assets/{{filename}}#t={{current_time_in_track}}" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  {{/each}}
+
+  <h2>What your mates are listening to</h2>
 
   {{#each followingContent}}
 
   {{#each this}}
-
-  {{!-- <p>{{consoleLog this}}</p> --}}
 
   <div class="user-card" id="card-{{this.id}}">
     <p class="user-card__text">{{this.title}}</p>
@@ -17,17 +29,6 @@
 
   {{/each}}
 
-
   {{/each}}
-  {{!-- <p>{{specificUser.user_name}}</p> --}}
 
-  {{#each userContent}}
-  <div class="user-card" id="card-{{id}}">
-    <p class="user-card__text">{{title}}</p>
-    <audio controls id="audio-{{id}}" ontimeupdate="this.currentTime >= {{target_time}} ? this.pause() : ''">
-      <source src=" ../../assets/{{filename}}#t={{current_time_in_track}}" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-  </div>
-  {{/each}}
 </section>

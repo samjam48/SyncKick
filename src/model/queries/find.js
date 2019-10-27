@@ -21,10 +21,18 @@ const followingListContent = followingList => {
   return Promise.all(promises);
 };
 
+const userAndContent = userId => {
+  const user = specificUser(userId);
+  const content = userContent(userId);
+
+  return Promise.all([user, content]);
+};
+
 module.exports = {
   allUsers,
   allContent,
   followingListContent,
   specificUser,
-  userContent
+  userContent,
+  userAndContent
 };
