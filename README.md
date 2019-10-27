@@ -6,27 +6,28 @@ Listening to content is an often lonely pursuit where you just listen to things 
 
 Users can listen at the exact same time or catch up on things the other has listened to and stay in sync. Kicking awesome 😝
 
+## Demo
+
+Live demo can be found here https://synckick.herokuapp.com/
 
 ## Prototype
 
 [Figma prototype](https://www.figma.com/file/4X5UDFJBqWLyeUVVUzfM7b/SyncBliss-Mocks?node-id=4%3A78)
-
 
 ## Tech
 
 Initial micro MVP is in React, Express with a PSQL db.
 We plan to venture into using TypeScript and React Native for the mvp app release.
 
-
 ## Collaboration
 
 Interested in helping out? Join the Hack The Press [slack group](https://app.slack.com/client/TL79RUFHP/) and talk to [Sam Harris](https://www.linkedin.com/in/sharris48/)
 
-
 ## Made at HackThePress
+
 This project was made at the [HackThePress 2019 Hackathon](https://www.hackthepress.org/2019-hackathon/) in London.
 The event and development was sponsored by:
 
-| [Aplisay](https://www.aplisay.com/)  | Caliu         | [Newspeak House](https://newspeak.house/) |
-| -------- | ------------- | -------------- |
+| [Aplisay](https://www.aplisay.com/)                                                                                                          | Caliu                                                                                                                                       | [Newspeak House](https://newspeak.house/)                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | <img src="https://res.cloudinary.com/simms-reeve/image/upload/v1568555139/aplisay-logo_qp4ii5.svg" alt="Aplisay Logo" style="width:200px;"/> | <img src="https://res.cloudinary.com/simms-reeve/image/upload/v1568555163/Asset_10caliu_jc66fd.svg" alt="Caliu Logo" style="width:200px;"/> | <img src="https://pbs.twimg.com/profile_images/599530591386804224/fBztcZ41_400x400.png" alt="Newspeak House Logo" style="width:200px;"/> |
