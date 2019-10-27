@@ -1,12 +1,24 @@
 <section class="page">
   <h2> Tracks</h2>
 
-  {{consoleLog followingContent}}
-  {{!-- {{#every followingContent}} --}}
+  {{#each followingContent}}
 
-  {{!-- <p>{{consoleLog followingContent}}</p> --}}
+  {{#each this}}
 
-  {{!-- {{/every}} --}}
+  {{!-- <p>{{consoleLog this}}</p> --}}
+
+  <div class="user-card" id="card-{{this.id}}">
+    <p class="user-card__text">{{this.title}}</p>
+    <audio controls id="audio-{{this.id}}" ontimeupdate="this.currentTime >= {{this.target_time}} ? this.pause() : ''">
+      <source src=" ../../assets/{{this.filename}}#t={{this.current_time_in_track}}" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  {{/each}}
+
+
+  {{/each}}
   {{!-- <p>{{specificUser.user_name}}</p> --}}
 
   {{#each userContent}}
