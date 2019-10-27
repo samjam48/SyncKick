@@ -39,14 +39,15 @@ INSERT INTO users (user_name, user_image, following_list) VALUES
 
 INSERT INTO content (title, filename, content_description, content_url, content_image, time_length, content_creator) VALUES
 ('Heather Intro', 'Heather-adams-intro.mp3', 'Heather introduction','https://anchor.fm/growth-mindset-podcast/episodes/66-Sam-Harris---The-Lost-Art-of-Listening-to-Yourself-e4tukt', 'https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1565531007591-fc871923c6237.jpg', '00:00:54', 'Sam Harris' ),
+('65: Lifehack 2019 - Growth Mindset Podcast', '65- Lifehack 2019 - Growth Mindset Podcast.mp3', 'The best lifehack for 2019 you have never heard of', 'https://anchor.fm/growth-mindset-podcast/episodes/66-Sam-Harris---The-Lost-Art-of-Listening-to-Yourself-e4tukt', 'https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1565531007591-fc871923c6237.jpg', '00:20:00', 'Sam Harris' ),
 ('Scramble', 'Scramble.mp3','right channel scramble','https://anchor.fm/s/55a9394/podcast/rss','https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1568189143375-992215fe34b24.jpg','00:00:02','Sam Harris'),
 ('Time travel', 'Time-Travel.mp3','time travel','https://anchor.fm/s/55a9394/podcast/rss','https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1568189143375-992215fe34b24.jpg','00:00:03','Sam Harris');
 
 INSERT INTO match_content (user_id, content_id, current_time_in_track, time_started_utc, currently_listening, target_time, rating) VALUES
 (1, 1, '00:00:48', '1568478582890', FALSE, 50, 3),
+(1, 2, '00:03:00', '1568478582890', FALSE, 600, 3),
 (2, 1, '00:00:28', '1568478582890', FALSE, 35, 3),
 (3, 2, '00:00:01', '1568478582890', FALSE, 2, 3),
-(1, 2, '00:00:00', '1568478582890', FALSE, 2, 3),
 (2, 3, '00:00:01', '1568478768026', TRUE, 2, 5);
 
 COMMIT;
