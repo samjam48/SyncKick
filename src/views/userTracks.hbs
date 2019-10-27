@@ -17,7 +17,9 @@
 
   {{#each followingContent}}
 
-  {{#each this}}
+  <h2>{{this.[0].[0].user_name}}</h2>
+
+  {{#each this.[1]}}
 
   <div class="user-card" id="card-{{this.id}}">
     <p class="user-card__text">{{this.title}}</p>

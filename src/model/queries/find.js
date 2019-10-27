@@ -14,18 +14,18 @@ const userContent = userId =>
     WHERE user_id = ${userId};`
   );
 
-const followingListContent = followingList => {
-  const promises = followingList.map(userId => {
-    return userContent(userId);
-  });
-  return Promise.all(promises);
-};
-
 const userAndContent = userId => {
   const user = specificUser(userId);
   const content = userContent(userId);
 
   return Promise.all([user, content]);
+};
+
+const followingListContent = followingList => {
+  const promises = followingList.map(userId => {
+    return userAndContent(userId);
+  });
+  return Promise.all(promises);
 };
 
 module.exports = {
