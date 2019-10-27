@@ -1,0 +1,17 @@
+{{#each usersWithFollowers}}
+<a href="/user/{{id}}" class="users-link">
+  <div class="user-card">
+    <h3 class="user-card__text">{{user_name}}</h3>
+    <image class="user-profile" src={{user_image}} />
+
+    <h5 class="user-card__text">Following</h5>
+    <div class="followers-section">
+      {{#each follower_details}}
+      <div class="follower">
+        <image class="follower-profile" src={{this.follower_image}} />
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</a>
+{{/each}}
