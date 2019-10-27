@@ -14,9 +14,17 @@ const userContent = userId =>
     WHERE user_id = ${userId};`
   );
 
+const followingListContent = followingList => {
+  const promises = followingList.map(userId => {
+    return userContent(userId);
+  });
+  return Promise.all(promises);
+};
+
 module.exports = {
   allUsers,
   allContent,
+  followingListContent,
   specificUser,
   userContent
 };

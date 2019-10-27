@@ -1,5 +1,14 @@
 <section class="page">
   <h2> Tracks</h2>
+
+  {{consoleLog followingContent}}
+  {{!-- {{#every followingContent}} --}}
+
+  {{!-- <p>{{consoleLog followingContent}}</p> --}}
+
+  {{!-- {{/every}} --}}
+  {{!-- <p>{{specificUser.user_name}}</p> --}}
+
   {{#each userContent}}
   <div class="user-card" id="card-{{id}}">
     <p class="user-card__text">{{title}}</p>
