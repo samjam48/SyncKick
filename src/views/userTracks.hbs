@@ -11,6 +11,13 @@
       Your browser does not support the audio element.
     </audio>
   </div>
+
+  {{#if currently_listening}}
+  <p>Track is Playing</p>
+  {{else}}
+  <p>Track is not Playing</p>
+  {{/if}}
+
   {{/each}}
 
   <h2>What your mates are listening to</h2>
