@@ -1,11 +1,11 @@
 const consoleLog = require("./consoleLog");
 const timeToSeconds = require("./timeToSeconds");
-const startPlaying = require("./startPlaying");
-const stopPlaying = require("./stopPlaying");
+const setPlayingFalse = require("./setPlayingFalse");
+const setPlayingTrue = require("./setPlayingTrue");
 
 module.exports = {
   consoleLog,
-  startPlaying,
-  stopPlaying,
+  setPlayingFalse,
+  setPlayingTrue,
   timeToSeconds
 };
