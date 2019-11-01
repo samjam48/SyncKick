@@ -2,6 +2,16 @@ SELECT * FROM match_content match
 JOIN content c ON c.id = match.content_id
 WHERE user_id = 1;
 
+
+UPDATE match_content match
+SET currently_listening = FALSE
+WHERE id = 1;
+
+
+UPDATE match_content match
+SET target_time = 500
+WHERE id = 1;
+
 -----
 
 SELECT

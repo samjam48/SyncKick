@@ -6,7 +6,7 @@
   {{#each content}}
   <div class="user-card" id="card-{{id}}">
     <p class="user-card__text">{{title}}</p>
-    <audio controls id="audio-{{id}}" onplay="{{startPlaying id}}" onpause="{{stopPlaying id}}"
+    <audio controls id="audio-{{id}}" onplay="{{setPlayingTrue id}}" onpause="{{setPlayingFalse id}}"
       ontimeupdate="this.currentTime >= {{target_time}} ? this.pause() : ''">
       <source src=" ../../assets/{{filename}}#t={{current_time_in_track}}" type="audio/mpeg">
       Your browser does not support the audio element.
