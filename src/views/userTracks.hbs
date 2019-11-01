@@ -6,11 +6,19 @@
   {{#each content}}
   <div class="user-card" id="card-{{id}}">
     <p class="user-card__text">{{title}}</p>
-    <audio controls id="audio-{{id}}" ontimeupdate="this.currentTime >= {{target_time}} ? this.pause() : ''">
+    <audio controls id="audio-{{id}}" onplay="{{setPlayingTrue id}}" onpause="{{setPlayingFalse id}}"
+      ontimeupdate="this.currentTime >= {{target_time}} ? this.pause() : ''">
       <source src=" ../../assets/{{filename}}#t={{current_time_in_track}}" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
   </div>
+
+  {{#if currently_listening}}
+  <p>Track is Playing</p>
+  {{else}}
+  <p>Track is not Playing</p>
+  {{/if}}
+
   {{/each}}
 
   <h2>What your mates are listening to</h2>
@@ -22,11 +30,16 @@
   {{#each this.[1]}}
 
   <div class="user-card" id="card-{{this.id}}">
-    <p class="user-card__text">{{this.title}}</p>
-    <audio controls id="audio-{{this.id}}" ontimeupdate="this.currentTime >= {{this.target_time}} ? this.pause() : ''">
-      <source src=" ../../assets/{{this.filename}}#t={{this.current_time_in_track}}" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
+    <h4>{{this.title}}</h4>
+
+    <p class="user-card__text">Currently at {{this.current_time_in_track}}</p>
+    {{#if this.currently_listening}}
+    <p class="user-card__text">{{this.[0].[0].user_name}} is listening to the track now.</p>
+    <button>Listen live</button>
+    {{else}}
+    <p class="user-card__text">{{this.[0].[0].user_name}} is not listening to this track right now</p>
+    <button>Catch up</button>
+    {{/if}}
   </div>
 
   {{/each}}
