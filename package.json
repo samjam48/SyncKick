@@ -1,5 +1,5 @@
 {
-  "name": "syncBliss",
+  "name": "synckick",
   "version": "1.0.0",
   "description": "App to allow users to listen to audio (podcasts, books and music) in sync and be less lonely. Users can listen at the same time or catch up on things the other has listened to and stay in sync",
   "main": "index.js",

@@ -1,4 +1,4 @@
-const { find } = require("../model/queries");
+const { find, insert } = require("../model/queries");
 
 exports.get = (req, res) => {
   find.userAndContent(req.params.id).then(userAndContent => {
@@ -13,3 +13,17 @@ exports.get = (req, res) => {
       });
   });
 };
+
+// const track = {
+//   user_id: 1,
+//   content_id: 1,
+//   current_time_in_track: "00:00:00",
+//   time_started_utc: "1568478582890",
+//   currently_listening: false,
+//   target_time: 600,
+//   rating: 4
+// };
+
+// insert
+//   .addTrackToUser(track)
+//   .then(id => console.log("inserted row id ========= ", id));

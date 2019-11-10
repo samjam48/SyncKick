@@ -12,6 +12,10 @@ UPDATE match_content match
 SET target_time = 500
 WHERE id = 1;
 
+INSERT INTO match_content(user_id, content_id, current_time_in_track, time_started_utc, currently_listening, target_time, rating)
+VALUES (1, 1, '00:00:48', '1568478582890', FALSE, 50, 3)
+RETURNING id;
+
 -----
 
 SELECT
