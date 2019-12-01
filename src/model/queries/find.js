@@ -4,14 +4,23 @@ const allUsers = () => connection.query("SELECT * FROM users;");
 
 const allContent = () => connection.query("SELECT * FROM content;");
 
-const specificUser = id =>
-  connection.query("SELECT * FROM users WHERE id = $1;", [id]);
+const specificUser = userId =>
+  connection.query("SELECT * FROM users WHERE id = $1;", [userId]);
 
 const userContent = userId =>
   connection.query(
-    `SELECT * FROM match_content match
-    JOIN content c ON c.id = match.content_id
-    WHERE user_id = ${userId};`
+    `SELECT * FROM content c
+    JOIN match_content match ON c.id = match.content_id
+    WHERE match.user_id = $1;`,
+    [userId]
+  );
+
+const userTrack = userTrackId =>
+  connection.query(
+    `SELECT * FROM content c
+    JOIN match_content match on c.id = match.content_id
+    WHERE match.id = $1;`,
+    [userTrackId]
   );
 
 const userAndContent = userId => {
@@ -33,6 +42,7 @@ module.exports = {
   allContent,
   followingListContent,
   specificUser,
+  userTrack,
   userContent,
   userAndContent
 };

@@ -1,0 +1,38 @@
+{{#each followingContent}}
+
+<h2>{{this.[0].[0].user_name}}</h2>
+
+{{#each this.[1]}}
+
+<div class="user-card" id="card-{{this.id}}">
+  <h4>{{this.title}}</h4>
+
+  <p class="user-card__text">Currently at {{this.current_time_in_track}}</p>
+
+  {{#if this.currently_listening}}
+
+  <p class="user-card__text">{{this.[0].[0].user_name}} is listening to the track now.</p>
+  {{consoleLog user}}
+  <a href="/user/{{user.id}}/listen/{{this.id}}/live">
+    <button>Listen live</button>
+  </a>
+
+  <a href="/listen/{{this.id}}/catchup">
+    <button>Catch up</button>
+  </a>
+
+  {{else}}
+
+  <p class="user-card__text">{{this.[0].[0].user_name}} is not listening to this track right now</p>
+
+  <a href="/listen/{{this.id}}/catchup">
+    <button>Catch up</button>
+  </a>
+
+  {{/if}}
+
+</div>
+
+{{/each}}
+
+{{/each}}

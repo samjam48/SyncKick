@@ -1,0 +1,25 @@
+{{!-- {{consoleLog user}}
+
+{{consoleLog track}} --}}
+
+<section class="page">
+
+  <p>Your listening live with {{user.user_name}}</p>
+
+  <div class="user-card" id="card-{{track.id}}">
+    <p class="user-card__text">{{track.title}}</p>
+    <audio autoplay="autoplay" controls id="audio-{{track.content_id}}">
+      <source src=" ../../assets/{{track.filename}}#t={{track.current_time_in_track}}" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <br />
+
+  <h3>Get Me Out of Here!</h3>
+
+  <a href="/users">
+    <button>Back to users</button>
+  </a>
+
+</section>
