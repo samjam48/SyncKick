@@ -9,7 +9,6 @@ let DB_URL = "";
 if (process.env.NODE_ENV === "test") {
   DB_URL = process.env.TEST_DB_URL;
 } else if (process.env.NODE_ENV === "local") {
-  console.log("using local db");
   DB_URL = process.env.LOCAL_DATABASE_URL;
 } else if (process.env.NODE_ENV === "production") {
   DB_URL = process.env.DATABASE_URL;

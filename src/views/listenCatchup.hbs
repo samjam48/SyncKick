@@ -1,10 +1,11 @@
 <section class="page">
 
-  <p>Your listening live with {{user.user_name}}</p>
+  <p>Your catching up with {{user.user_name}}</p>
 
   <div class="user-card" id="card-{{track.id}}">
     <p class="user-card__text">{{track.title}}</p>
-    <audio autoplay="autoplay" id="audio-{{track.content_id}}">
+    <audio controls autoplay="autoplay" id="audio-{{track.content_id}}"
+      ontimeupdate="this.currentTime >= {{track.target_time}} ? this.pause() : ''">
       <source src=" ../../assets/{{track.filename}}#t={{track.current_time_in_track}}" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>

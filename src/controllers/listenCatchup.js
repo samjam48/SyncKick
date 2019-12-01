@@ -1,12 +1,11 @@
-// stream the track exactly how a different user is listening to it.
-// e.g. play, stop and pause as the other user does
+// stream the track from current point to where the other user has reached.
 
 const { find, insert, update } = require("../model/queries");
 
 exports.get = (req, res) => {
   find.userTrack(req.params.track_id).then(([track]) => {
     find.specificUser(track.user_id).then(([user]) => {
-      res.render("listenLive", {
+      res.render("listenCatchup", {
         track,
         user
       });
