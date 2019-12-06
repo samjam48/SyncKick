@@ -46,3 +46,5 @@ module.exports = {
   userContent,
   userAndContent
 };
+
+// SQL statements to add current user into following list content

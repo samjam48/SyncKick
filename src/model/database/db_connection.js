@@ -7,7 +7,8 @@ const url = require("url");
 let DB_URL = "";
 
 if (process.env.NODE_ENV === "test") {
-  DB_URL = process.env.TEST_DB_URL;
+  DB_URL = process.env.LOCAL_DATABASE_URL;
+  // DB_URL = process.env.TEST_DB_URL;
 } else if (process.env.NODE_ENV === "local") {
   DB_URL = process.env.LOCAL_DATABASE_URL;
 } else if (process.env.NODE_ENV === "production") {

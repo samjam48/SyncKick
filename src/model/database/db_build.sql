@@ -38,24 +38,26 @@ INSERT INTO users (user_name, user_image, following_list) VALUES
 ('Mrs Bean', 'https://dp.profilepics.in/profile_pictures/good/good_profile_pics_01.jpg', '{1}');
 
 INSERT INTO content (title, filename, content_description, content_url, content_image, time_length, content_creator) VALUES
-('Heather Intro', 'Heather-Adams-Intro.mp3', 'Heather introduction','https://anchor.fm/growth-mindset-podcast/episodes/66-Sam-Harris---The-Lost-Art-of-Listening-to-Yourself-e4tukt', 'https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1565531007591-fc871923c6237.jpg', '00:00:54', 'Sam Harris' ),
+('Problems and Solutions', '4-Agustin-Problems_&_Solutions.mp3', 'Agustin Gonzalez offers some sage stoic advice','https://growthmindsetpodcast.com', 'https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1565531007591-fc871923c6237.jpg', '00:06:38', 'Sam Harris' ),
 ('65: Lifehack 2019 - Growth Mindset Podcast', '65: Lifehack 2019 - Growth Mindset Podcast.mp3', 'The best lifehack for 2019 you have never heard of', 'https://anchor.fm/growth-mindset-podcast/episodes/66-Sam-Harris---The-Lost-Art-of-Listening-to-Yourself-e4tukt', 'https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1565531007591-fc871923c6237.jpg', '00:20:00', 'Sam Harris' ),
 ('66: The Lost Art of Listening To Yourself - Growth Mindset Podcast', '66: The Lost Art of Listening To Yourself - Growth Mindset Podcast.mp3', 'The best lifehack for 2019 you have never heard of', 'https://anchor.fm/growth-mindset-podcast/episodes/66-Sam-Harris---The-Lost-Art-of-Listening-to-Yourself-e4tukt', 'https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1565531007591-fc871923c6237.jpg', '00:20:00', 'Sam Harris' ),
 ('Makhai Beats', 'Love Chances.mp3','Mellow Beats to enjoy','https://anchor.fm/s/55a9394/podcast/rss','https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1568189143375-992215fe34b24.jpg','00:02:26','Makhai Beats'),
 ('Inspiring Corporate Music', 'Scott_Holmes_-_10_-_Inspiring_Corporate.mp3','Inspiring Corporate Music','https://anchor.fm/s/55a9394/podcast/rss','https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1568189143375-992215fe34b24.jpg','00:02:29','Scott Holmes'),
-('Happy Ending', 'Scott_Holmes_-_11_-_Happy_Ending.mp3','Inspiring Corporate Music','https://anchor.fm/s/55a9394/podcast/rss','https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1568189143375-992215fe34b24.jpg','00:02:33','Scott Holmes');
-
-
+('Happy Ending', 'Scott_Holmes_-_11_-_Happy_Ending.mp3','Inspiring Corporate Music','https://anchor.fm/s/55a9394/podcast/rss','https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1568189143375-992215fe34b24.jpg','00:02:33','Scott Holmes'),
+('Wander', 'Ikson - Wander.mp3','Chill out tunes','https://anchor.fm/s/55a9394/podcast/rss','https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1568189143375-992215fe34b24.jpg','00:02:10','Ikson'),
+('Beach', 'Joakim Karud - Beach.mp3','Chill out tunes','https://anchor.fm/s/55a9394/podcast/rss','https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1568189143375-992215fe34b24.jpg','00:02:11','Joakim Karud'),
+('Having ideas and dealing with money', '6-Nick-Having_Ideas_&_money.mp3','Nicholas Charles Tyrwhitt Wheeler on how to have ideas and the problems you get when they work out','https://anchor.fm/s/55a9394/podcast/rss','https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1568189143375-992215fe34b24.jpg','00:04:50','Sam Harris'),
+('Mait Muntel - Earliest Memory', '14-Mait_Early Memory.mp3','A three year decides to walk home across a city in the middle of Estonian winter','https://anchor.fm/s/55a9394/podcast/rss','https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/798221/798221-1568189143375-992215fe34b24.jpg','00:01:45','Sam Harris');
 
 INSERT INTO match_content (user_id, content_id, current_time_in_track, time_started_utc, currently_listening, target_time, rating) VALUES
-(1, 4, '00:00:48', '1568478582890', FALSE, 80, 3),
+(1, 1, '00:00:48', '1568478582890', FALSE, 80, 3),
 (1, 2, '00:03:00', '1568478582890', TRUE, 600, 3),
-(1, 5, '00:00:00', '1568478582890', FALSE, 200, 3),
-(2, 2, '00:05:00', '1568478582890', FALSE, 35, 3),
-(2, 3, '00:04:01', '1568478768026', TRUE, 2, 5),
+(1, 3, '00:00:00', '1568478582890', FALSE, 200, 3),
+(2, 4, '00:01:00', '1568478582890', FALSE, 85, 3),
+(2, 5, '00:00:21', '1568478768026', TRUE, 100, 5),
 (3, 6, '00:00:20', '1568478582890', FALSE, 150, 3),
-(3, 4, '00:00:01', '1568478582890', FALSE, 80, 3),
-(3, 3, '00:10:01', '1568478582890', TRUE, 2, 3),
-(4, 2, '00:05:01', '1568478582890', FALSE, 2, 3);
+(3, 7, '00:00:01', '1568478582890', FALSE, 80, 3),
+(3, 8, '00:01:01', '1568478582890', TRUE, 120, 3),
+(4, 9, '00:00:11', '1568478582890', FALSE, 50, 3);
 
 COMMIT;
