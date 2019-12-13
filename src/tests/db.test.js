@@ -13,7 +13,8 @@ test("tape test for db files is working", t => {
 const data = {
   userName: "Sam",
   title: "Problems and Solutions",
-  currentlyListening: false
+  currentlyListening: false,
+  currentTimeInTrack: "00:00:48"
 };
 
 // ---------- Find Queries --------- //
@@ -69,5 +70,79 @@ connection
         t.end();
       });
     });
+
+    test("Find the track and users listening details", t => {
+      return find.userTrack(1).then(result => {
+        t.deepEqual(
+          result[0].title,
+          data.title,
+          "userTrack() returns correct track title"
+        );
+        t.deepEqual(
+          result[0].current_time_in_track,
+          data.currentTimeInTrack,
+          "userTrack() returns correct time location in track"
+        );
+        t.end();
+      });
+    });
+
+    test("Find all content of a user", t => {
+      return find.userAndContent(1).then(result => {
+        t.deepEqual(
+          result[0][0].user_name,
+          data.userName,
+          "userAndContent() returns correct user as first element"
+        );
+        t.deepEqual(
+          result[1][0].title,
+          data.title,
+          "userAndContent() returns correct track title"
+        );
+        t.deepEqual(
+          result[1][0].current_time_in_track,
+          data.currentTimeInTrack,
+          "userAndContent() returns correct time location in track"
+        );
+        t.end();
+      });
+    });
+
+    test("Find all content of followers", t => {
+      return find.followingListContent([1, 2]).then(result => {
+        t.deepEqual(
+          result[0][0][0].user_name,
+          data.userName,
+          "followingListContent() returns correct user as first element"
+        );
+        t.deepEqual(
+          result[0][1][0].title,
+          data.title,
+          "followingListContent() returns correct track title"
+        );
+        t.deepEqual(
+          result[0][1][0].current_time_in_track,
+          data.currentTimeInTrack,
+          "followingListContent() returns correct time location in track"
+        );
+        t.deepEqual(
+          result.length,
+          2,
+          "followingListContent() returns correct amount of users and their content"
+        );
+        t.end();
+      });
+    });
   })
   .catch(e => console.error("error", e));
+
+// ---------- Insert Queries --------- //
+
+// const followingListContent = followingList => {
+//   const promises = followingList.map(userId => {
+//     return userAndContent(userId);
+//   });
+//   return Promise.all(promises);
+// };
+
+// ---------- Update Queries --------- //
