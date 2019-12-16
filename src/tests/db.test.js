@@ -14,7 +14,25 @@ const data = {
   userName: "Sam",
   title: "Problems and Solutions",
   currentlyListening: false,
-  currentTimeInTrack: "00:00:48"
+  currentTimeInTrack: "00:00:48",
+  newTrack: {
+    user_id: 1,
+    content_id: 1,
+    current_time_in_track: "00:00:00",
+    time_started_utc: "1568478582899",
+    currently_listening: false,
+    target_time: 300,
+    rating: null
+  },
+  newTrackCopy: {
+    user_id: 1,
+    content_id: 1,
+    current_time_in_track: "00:00:00",
+    time_started_utc: "1568478582899",
+    currently_listening: false,
+    target_time: 300,
+    rating: null
+  }
 };
 
 // ---------- Find Queries --------- //
@@ -138,11 +156,84 @@ connection
 
 // ---------- Insert Queries --------- //
 
-// const followingListContent = followingList => {
-//   const promises = followingList.map(userId => {
-//     return userAndContent(userId);
-//   });
-//   return Promise.all(promises);
-// };
+connection.query(build).then(() => {
+  test("Add track to Users content", t => {
+    return insert.addTrackToUser(data.newTrack).then(result => {
+      t.deepEqual(
+        result[0].id,
+        10,
+        "addTrackToUser() adds a new track and returns id"
+      );
+      t.deepEqual(
+        data.newTrack,
+        data.newTrackCopy,
+        "addTrackToUser() is a pure function"
+      );
+      return find.userTrack(result[0].id).then(result => {
+        t.deepEqual(
+          result[0].title,
+          data.title,
+          "addTrackToUser() creates new track with correct title"
+        );
+        t.end();
+      });
+    });
+  });
+});
 
 // ---------- Update Queries --------- //
+
+connection.query(build).then(() => {
+  // // test won't work with double quotes
+  // test("Update current time", t => {
+  //   return update.currentTime(9, "00:01:00").then(() => {
+  //     return find.userTrack(9).then(result => {
+  //       t.deepEqual(
+  //         result[0].current_time_in_track,
+  //         "00:01:00",
+  //         "update currentTime() changes correct tracks time"
+  //       );
+  //       t.end();
+  //     });
+  //   });
+  // });
+
+  test("Update playing status to false", t => {
+    return update.setPlayingFalse(2).then(() => {
+      return find.userTrack(2).then(result => {
+        t.deepEqual(
+          result[0].currently_listening,
+          false,
+          "setPlayingFalse() changes correct track to false"
+        );
+        t.end();
+      });
+    });
+  });
+
+  test("Update playing status to true", t => {
+    return update.setPlayingTrue(1).then(() => {
+      return find.userTrack(1).then(result => {
+        t.deepEqual(
+          result[0].currently_listening,
+          true,
+          "setPlayingTrue() changes correct track to false"
+        );
+        t.end();
+      });
+    });
+  });
+
+  test("Update target time", t => {
+    return update.targetTime(1, 500).then(() => {
+      return find.userTrack(1).then(result => {
+        t.deepEqual(
+          result[0].target_time,
+          500,
+          "targetTime() changes correct tracks target time"
+        );
+        t.end();
+      });
+    });
+  });
+});

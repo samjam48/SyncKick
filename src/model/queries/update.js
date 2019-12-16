@@ -1,18 +1,19 @@
 const connection = require("../database/db_connection");
 
-const currentTime = (matchContentId, currentTime) =>
+const currentTime = (matchContentId, currentTime) => {
   connection.query(
     `UPDATE match_content
     SET current_time_in_track = ${currentTime}
     WHERE id = ${matchContentId};`
   );
+};
 
-const rating = (matchContentId, rating) =>
-  connection.query(
-    `UPDATE match_content
-    SET rating = ${rating}
-    WHERE id = ${matchContentId};`
-  );
+// const rating = (matchContentId, rating) =>
+//   connection.query(
+//     `UPDATE match_content
+//     SET rating = ${rating}
+//     WHERE id = ${matchContentId};`
+//   );
 
 const setPlayingFalse = matchContentId =>
   connection.query(
@@ -37,7 +38,6 @@ const targetTime = (matchContentId, targetTime) =>
 
 module.exports = {
   currentTime,
-  rating,
   setPlayingFalse,
   setPlayingTrue,
   targetTime
