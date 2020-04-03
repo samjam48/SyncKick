@@ -19,6 +19,11 @@ Live demo can be found here https://synckick.herokuapp.com/
 Initial micro MVP is in React, Express with a PSQL db.
 We plan to venture into using TypeScript and React Native for the mvp app release.
 
+## Database
+
+We kept the database simple and faked users and didn't think about subscribing to different podcasts. We just focused on a user being connected to a piece of content and marking in the database their position and current listening status as live or not so others could hypothetically listen at same time or listen up to the same point.
+
+
 ## Collaboration
 
 Interested in helping out? Join the Hack The Press [slack group](https://app.slack.com/client/TL79RUFHP/) and talk to [Sam Harris](https://www.linkedin.com/in/sharris48/)
