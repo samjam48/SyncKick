@@ -23,6 +23,8 @@ We plan to venture into using TypeScript and React Native for the mvp app releas
 
 We kept the database simple and faked users and didn't think about subscribing to different podcasts. We just focused on a user being connected to a piece of content and marking in the database their position and current listening status as live or not so others could hypothetically listen at same time or listen up to the same point.
 
+See diagram here - https://dbdiagram.io/d/5e87636c4495b02c3b893797
+
 
 ## Collaboration
 
